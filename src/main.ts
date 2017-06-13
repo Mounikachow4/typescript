@@ -1,15 +1,14 @@
-import {SocialNetwork} from './social-network';
-import * as _ from 'lodash';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/Observable/timer';
-import 'rxjs/add/Observable/interval';
-Observable.interval(1000).subscribe(x => console.log(x));
-
-class App implements SocialNetwork{
-	title = "Eggheads";
-	getUsers(){
-		return [{name:"John"}];
+function addAge(age){
+	return function(targetClass){
+		return class{
+			name = new targetClass().name;
+			age = age;
+		}
 	}
 }
-console.log(_.isArray(new App().getUsers()))
 
+@addAge(30)
+class Person{
+	name = "John";
+}
+console.log(new Person());
