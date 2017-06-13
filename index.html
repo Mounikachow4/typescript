@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/systemjs@0.20.13/dist/system.js"></script>
+</head>
+<body>
+<script>
+	System.config({
+		packages:{
+			"dist":{
+				"defaultExtension":"js",
+				"main":"main"
+			},
+			"rxjs":{
+				"defaultExtension":"js"
+			}
+		},
+		map:{
+			"lodash":"https://npmcdn.com/lodash@4.17.4",
+			"rxjs":"node_modules/rxjs"
+			
+		}
+	});
+	System.import("dist");
+</script>
+</body>
+</html>
