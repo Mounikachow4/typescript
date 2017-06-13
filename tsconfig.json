@@ -6,7 +6,8 @@
     "module": "commonjs",  
     "outDir": "./dist",
     "noEmitOnError": false,
-    "experimentalDecorators": true              /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true           /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */
     // "lib": [],                             /* Specify library files to be included in the compilation:  */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */

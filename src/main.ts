@@ -1,14 +1,19 @@
-function addAge(age){
+import 'reflect-metadata';
+
+function example(){
 	return function(targetClass){
-		return class{
-			name = new targetClass().name;
-			age = age;
-		}
+		const types = Reflect.getMetadata('design:paramtypes', targetClass)
+		console.log(types);
+		return targetClass;
 	}
 }
 
-@addAge(30)
+@example()
 class Person{
-	name = "John";
+	constructor(name:string, age:number){}
 }
-console.log(new Person());
+@example()
+class Cat{
+	constructor(lazy:boolean, hair:any){}
+}
+new Person("John", 10);
